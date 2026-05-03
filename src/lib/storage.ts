@@ -7,8 +7,8 @@ export function createDemoProfile(email: string): Profile {
   return {
     id: email.trim().toLowerCase() || 'demo-user',
     displayName: email.trim().toLowerCase() || 'demo learner',
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     chineseDisplayMode: 'both',
     estimatedLevel: 'beginner',
     placementCompletedAt: null

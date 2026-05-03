@@ -30,8 +30,8 @@ describe('summarizeProgress', () => {
 function makeWord(id: string): VocabularyEntry {
   return {
     id,
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     term: id,
     simplified: id,
     traditional: id,

@@ -41,7 +41,7 @@ export function LoginScreen({ onDemoLogin }: LoginScreenProps) {
       <section className="login-panel">
         <div className="brand-mark">字</div>
         <h1>Daily Vocab</h1>
-        <p>English to Chinese words matched to your level.</p>
+        <p>Chinese to English words matched to your level.</p>
         <form onSubmit={handleSubmit} className="login-form">
           <label htmlFor="email">Email</label>
           <div className="input-row">
@@ -63,4 +63,3 @@ export function LoginScreen({ onDemoLogin }: LoginScreenProps) {
     </main>
   );
 }
-

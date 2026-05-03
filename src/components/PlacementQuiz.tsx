@@ -31,8 +31,8 @@ export function PlacementQuiz({ vocabulary, onComplete }: PlacementQuizProps) {
     <main className="quiz-screen">
       <section className="quiz-panel">
         <p className="eyebrow">Placement {index + 1} / {questions.length}</p>
-        <h1>{question.word.term}</h1>
-        <p>Choose the closest Chinese meaning.</p>
+        <ChinesePrompt word={question.word} />
+        <p>Choose the closest English meaning.</p>
         <div className="choice-list">
           {question.choices.map((choice) => (
             <button
@@ -50,3 +50,15 @@ export function PlacementQuiz({ vocabulary, onComplete }: PlacementQuizProps) {
   );
 }
 
+function ChinesePrompt({ word }: { word: VocabularyEntry }) {
+  if (word.simplified === word.traditional) {
+    return <h1>{word.traditional}</h1>;
+  }
+
+  return (
+    <div className="quiz-prompt">
+      <h1>{word.traditional}</h1>
+      <span>{word.simplified}</span>
+    </div>
+  );
+}

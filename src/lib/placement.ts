@@ -33,15 +33,14 @@ function buildChoices(word: VocabularyEntry, vocabulary: VocabularyEntry[]) {
     .slice(0, 2)
     .map((candidate) => ({
       vocabularyId: candidate.id,
-      label: `${candidate.traditional} / ${candidate.simplified}`
+      label: candidate.term
     }));
 
   return [
     {
       vocabularyId: word.id,
-      label: `${word.traditional} / ${word.simplified}`
+      label: word.term
     },
     ...distractors
   ].sort((a, b) => a.label.localeCompare(b.label));
 }
-

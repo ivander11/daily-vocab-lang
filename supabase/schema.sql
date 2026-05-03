@@ -1,8 +1,8 @@
 create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   display_name text,
-  source_language text not null default 'en',
-  target_language text not null default 'zh',
+  source_language text not null default 'zh',
+  target_language text not null default 'en',
   chinese_display_mode text not null default 'both'
     check (chinese_display_mode in ('simplified', 'traditional', 'both')),
   estimated_level text not null default 'beginner'
@@ -14,8 +14,8 @@ create table if not exists public.profiles (
 
 create table if not exists public.vocabulary (
   id text primary key,
-  source_language text not null default 'en',
-  target_language text not null default 'zh',
+  source_language text not null default 'zh',
+  target_language text not null default 'en',
   term text not null,
   simplified text not null,
   traditional text not null,
@@ -84,4 +84,3 @@ create policy "placement attempts are readable by owner"
 create policy "placement attempts are writable by owner"
   on public.placement_attempts for insert
   with check (auth.uid() = user_id);
-

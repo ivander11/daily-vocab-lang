@@ -4,8 +4,8 @@ export type WordStatus = 'new' | 'learning' | 'known';
 
 export interface VocabularyEntry {
   id: string;
-  sourceLanguage: 'en' | string;
-  targetLanguage: 'zh' | string;
+  sourceLanguage: 'zh' | string;
+  targetLanguage: 'en' | string;
   term: string;
   simplified: string;
   traditional: string;
@@ -56,4 +56,3 @@ export interface ProgressSummary {
   unseen: number;
   total: number;
 }
-

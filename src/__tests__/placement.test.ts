@@ -5,8 +5,8 @@ import type { VocabularyEntry } from '../types';
 const words: VocabularyEntry[] = [
   {
     id: 'b1',
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     term: 'brave',
     simplified: '勇敢的',
     traditional: '勇敢的',
@@ -19,8 +19,8 @@ const words: VocabularyEntry[] = [
   },
   {
     id: 'i1',
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     term: 'resilient',
     simplified: '有韧性的',
     traditional: '有韌性的',
@@ -33,8 +33,8 @@ const words: VocabularyEntry[] = [
   },
   {
     id: 'a1',
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     term: 'ambiguous',
     simplified: '模棱两可的',
     traditional: '模稜兩可的',
@@ -77,6 +77,8 @@ describe('buildPlacementQuestions', () => {
         question.choices.some((choice) => choice.vocabularyId === question.word.id)
       )
     ).toBe(true);
+    expect(questions[0].choices.find((choice) => choice.vocabularyId === 'b1')?.label).toBe(
+      'brave'
+    );
   });
 });
-

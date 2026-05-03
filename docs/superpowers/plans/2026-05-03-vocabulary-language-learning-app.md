@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a mobile-first Supabase-backed PWA for English to Chinese vocabulary learning with placement quiz, personalized word cards, account login, and display settings.
+**Goal:** Build a mobile-first Supabase-backed PWA for Chinese to English vocabulary learning with placement quiz, personalized word cards, account login, and display settings.
 
 **Architecture:** The app is a React/TypeScript PWA. Pure domain modules handle placement scoring, recommendation, vocabulary seed data, and progress summaries; React screens handle auth, onboarding, cards, and settings; Supabase is isolated behind a small client/data access layer.
 
@@ -20,7 +20,7 @@
 - `src/App.tsx`: auth/session routing and top-level layout.
 - `src/styles.css`: mobile-first app styling.
 - `src/types.ts`: shared domain types.
-- `src/data/seedVocabulary.ts`: starter English to Chinese vocabulary.
+- `src/data/seedVocabulary.ts`: starter Chinese to English vocabulary.
 - `src/lib/placement.ts`: placement scoring.
 - `src/lib/recommendation.ts`: next-word selection.
 - `src/lib/progress.ts`: progress summary helpers.
@@ -86,7 +86,7 @@ Create types for `DisplayMode`, `Level`, `WordStatus`, `VocabularyEntry`, `UserW
 
 - [ ] **Step 2: Add seed vocabulary**
 
-Add at least 30 English to Chinese vocabulary entries with Simplified, Traditional, pinyin, examples, difficulty, and tags.
+Add at least 30 Chinese to English vocabulary entries with Simplified, Traditional, pinyin, examples, difficulty, and tags.
 
 ### Task 3: Placement Scoring With TDD
 
@@ -241,4 +241,3 @@ Run:
 git add .
 git commit -m "Build vocabulary learning PWA"
 ```
-

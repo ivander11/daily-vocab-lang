@@ -2,9 +2,9 @@
 
 ## Overview
 
-Build a mobile-first progressive web app for English to Chinese vocabulary learning. The first version should feel like opening a lock-screen vocabulary widget: the user lands directly on one focused word card, gives a quick learning-status response, and immediately receives another word tailored to their level.
+Build a mobile-first progressive web app for Chinese to English vocabulary learning. The first version should feel like opening a lock-screen vocabulary widget: the user lands directly on one focused word card, gives a quick learning-status response, and immediately receives another word tailored to their level.
 
-The app will start with English to Chinese, while keeping the product and data model flexible enough to support additional language pairs later. Chinese display must support Simplified, Traditional, or both, based on user preference.
+The app will start with Chinese to English, while keeping the product and data model flexible enough to support additional language pairs later. Chinese display must support Simplified, Traditional, or both, based on user preference.
 
 ## Goals
 
@@ -13,7 +13,7 @@ The app will start with English to Chinese, while keeping the product and data m
 - Start each new user with a short placement quiz.
 - Tailor vocabulary difficulty based on the placement result and ongoing user feedback.
 - Let users mark words as `Know`, `Learning`, or `New`.
-- Seed the app with a useful starter English to Chinese vocabulary list.
+- Seed the app with a useful starter Chinese to English vocabulary list.
 - Structure the app so future iOS or Android widgets can reuse the same vocabulary and progress data.
 
 ## Non-Goals For Version 1
@@ -22,7 +22,7 @@ The app will start with English to Chinese, while keeping the product and data m
 - Native Android widgets.
 - Full grammar lessons, speaking practice, handwriting, or listening drills.
 - Complex spaced-repetition scheduling.
-- Multiple learning directions beyond English to Chinese.
+- Multiple learning directions beyond Chinese to English.
 
 ## Product Scope
 
@@ -30,10 +30,10 @@ Version 1 is a Supabase-backed PWA. Users sign in with a magic-link or email-cod
 
 Each vocabulary card shows:
 
-- English word.
 - Simplified Chinese translation.
 - Traditional Chinese translation.
 - Pinyin.
+- English meaning.
 - Short example sentence.
 - Quick status buttons: `Know`, `Learning`, `New`.
 
@@ -47,7 +47,7 @@ The login screen contains an email field and a magic-link or email-code submissi
 
 ### Placement Quiz
 
-New users complete a short placement quiz of about 8 to 12 questions. Each question shows an English word and asks the user to choose the correct Chinese meaning. The quiz result sets the user's initial vocabulary level, such as beginner, intermediate, or advanced.
+New users complete a short placement quiz of about 8 to 12 questions. Each question shows a Chinese word and asks the user to choose the correct English meaning. The quiz result sets the user's initial vocabulary level, such as beginner, intermediate, or advanced.
 
 ### Vocabulary Card
 
@@ -56,7 +56,7 @@ The vocabulary card is the main experience. It should be mobile-first, visually 
 The card flow is:
 
 1. Load the next recommended word.
-2. Show English, Chinese translations, pinyin, and example.
+2. Show Chinese, pinyin, English meaning, and example.
 3. User taps `Know`, `Learning`, or `New`.
 4. Save progress.
 5. Move to the next recommended word.
@@ -86,8 +86,8 @@ Stores user-level settings and personalization state.
 
 - `id`: Supabase auth user ID.
 - `display_name`: optional user display name.
-- `source_language`: default `en`.
-- `target_language`: default `zh`.
+- `source_language`: default `zh`.
+- `target_language`: default `en`.
 - `chinese_display_mode`: `simplified`, `traditional`, or `both`.
 - `estimated_level`: `beginner`, `intermediate`, or `advanced`.
 - `placement_completed_at`: timestamp.
@@ -99,8 +99,8 @@ Stores user-level settings and personalization state.
 Stores reusable vocabulary entries.
 
 - `id`: unique word ID.
-- `source_language`: default `en`.
-- `target_language`: default `zh`.
+- `source_language`: default `zh`.
+- `target_language`: default `en`.
 - `term`: English word.
 - `simplified`: Simplified Chinese translation.
 - `traditional`: Traditional Chinese translation.
@@ -184,4 +184,3 @@ Testing should focus on behavior with product risk:
 ## Delivery
 
 The local project should be initialized as a Git repository. After implementation is complete and verified, create a GitHub repository and push the app there. The repository should include setup instructions for local development and required Supabase environment variables.
-

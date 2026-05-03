@@ -1,6 +1,6 @@
 # Daily Vocab
 
-Mobile-first English to Chinese vocabulary learning PWA with placement quiz, quick word-status feedback, and Supabase magic-link login.
+Mobile-first Chinese to English vocabulary learning PWA with placement quiz, quick word-status feedback, and Supabase magic-link login.
 
 ## Setup
 
@@ -30,7 +30,7 @@ npm run dev
 
 ## Product Scope
 
-- English to Chinese first.
+- Chinese to English first.
 - Simplified, Traditional, or Both display modes.
 - Placement quiz for starting level.
 - Quick status buttons: Know, Learning, New.

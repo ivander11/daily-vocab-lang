@@ -32,16 +32,16 @@ export function VocabularyCard({ vocabulary, progress, profile, onStatus }: Voca
       </div>
       <article className="word-card">
         <p className="eyebrow">Next word</p>
-        <h1>{word.term}</h1>
         <ChineseDisplay word={word} mode={profile.chineseDisplayMode} />
         <p className="pinyin">{word.pinyin}</p>
+        <h2 className="english-answer">{word.term}</h2>
         <div className="example">
-          <span>{word.exampleEn}</span>
           <span>
             {profile.chineseDisplayMode === 'simplified'
               ? word.exampleZhSimplified
               : word.exampleZhTraditional}
           </span>
+          <span>{word.exampleEn}</span>
         </div>
       </article>
       <div className="status-grid">
@@ -79,4 +79,3 @@ function ChineseDisplay({
     </div>
   );
 }
-

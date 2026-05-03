@@ -12,8 +12,8 @@ const vocabulary: VocabularyEntry[] = [
 
 const profile: Profile = {
   id: 'user-1',
-  sourceLanguage: 'en',
-  targetLanguage: 'zh',
+  sourceLanguage: 'zh',
+  targetLanguage: 'en',
   chineseDisplayMode: 'both',
   estimatedLevel: 'intermediate',
   placementCompletedAt: '2026-05-03T00:00:00.000Z'
@@ -61,8 +61,8 @@ describe('selectNextWord', () => {
 function makeWord(id: string, term: string, difficulty: VocabularyEntry['difficulty']): VocabularyEntry {
   return {
     id,
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     term,
     simplified: term,
     traditional: term,
@@ -92,4 +92,3 @@ function makeProgress(
     updatedAt: '2026-05-03T00:00:00.000Z'
   };
 }
-

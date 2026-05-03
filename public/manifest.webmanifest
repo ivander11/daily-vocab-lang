@@ -1,7 +1,7 @@
 {
   "name": "Daily Vocab",
   "short_name": "Vocab",
-  "description": "English to Chinese vocabulary cards tailored to your level.",
+  "description": "Chinese to English vocabulary cards tailored to your level.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#111827",
@@ -15,4 +15,3 @@
     }
   ]
 }
-

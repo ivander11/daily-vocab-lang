@@ -46,8 +46,8 @@ function word(
 ): VocabularyEntry {
   return {
     id: term.toLowerCase().replace(/\s+/g, '-'),
-    sourceLanguage: 'en',
-    targetLanguage: 'zh',
+    sourceLanguage: 'zh',
+    targetLanguage: 'en',
     term,
     simplified,
     traditional,
