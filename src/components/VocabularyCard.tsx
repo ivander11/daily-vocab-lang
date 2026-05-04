@@ -1,6 +1,7 @@
 import { Check, HelpCircle, RotateCcw } from 'lucide-react';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { splitHighlightedText } from '../lib/highlight';
+import { updateNativeWidget } from '../lib/nativeWidget';
 import { selectNextWord } from '../lib/recommendation';
 import type { Profile, UserWordProgress, VocabularyEntry, WordStatus } from '../types';
 
@@ -16,6 +17,24 @@ export function VocabularyCard({ vocabulary, progress, profile, onStatus }: Voca
     () => selectNextWord(vocabulary, progress, profile),
     [vocabulary, progress, profile]
   );
+
+  useEffect(() => {
+    if (!word) return;
+
+    const chinese = profile.chineseDisplayMode === 'simplified' ? word.simplified : word.traditional;
+    const exampleChinese =
+      profile.chineseDisplayMode === 'simplified'
+        ? word.exampleZhSimplified
+        : word.exampleZhTraditional;
+
+    void updateNativeWidget({
+      chinese,
+      pinyin: word.pinyin,
+      meaning: word.term,
+      exampleChinese,
+      exampleEnglish: word.exampleEn
+    });
+  }, [profile.chineseDisplayMode, word]);
 
   if (!word) {
     return (
