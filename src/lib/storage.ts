@@ -9,7 +9,7 @@ export function createDemoProfile(email: string): Profile {
     displayName: email.trim().toLowerCase() || 'demo learner',
     sourceLanguage: 'zh',
     targetLanguage: 'en',
-    chineseDisplayMode: 'both',
+    chineseDisplayMode: 'traditional',
     estimatedLevel: 'beginner',
     placementCompletedAt: null
   };
@@ -17,7 +17,17 @@ export function createDemoProfile(email: string): Profile {
 
 export function loadProfile(): Profile | null {
   const raw = localStorage.getItem(profileKey);
-  return raw ? (JSON.parse(raw) as Profile) : null;
+  if (!raw) return null;
+
+  const profile = JSON.parse(raw) as Omit<Profile, 'chineseDisplayMode'> & {
+    chineseDisplayMode: Profile['chineseDisplayMode'] | 'both';
+  };
+
+  if (profile.chineseDisplayMode === 'both') {
+    return { ...profile, chineseDisplayMode: 'traditional' };
+  }
+
+  return { ...profile, chineseDisplayMode: profile.chineseDisplayMode };
 }
 
 export function saveProfile(profile: Profile) {

@@ -14,7 +14,7 @@ const profile: Profile = {
   id: 'user-1',
   sourceLanguage: 'zh',
   targetLanguage: 'en',
-  chineseDisplayMode: 'both',
+  chineseDisplayMode: 'traditional',
   estimatedLevel: 'intermediate',
   placementCompletedAt: '2026-05-03T00:00:00.000Z'
 };

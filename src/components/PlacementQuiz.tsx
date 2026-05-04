@@ -51,14 +51,5 @@ export function PlacementQuiz({ vocabulary, onComplete }: PlacementQuizProps) {
 }
 
 function ChinesePrompt({ word }: { word: VocabularyEntry }) {
-  if (word.simplified === word.traditional) {
-    return <h1>{word.traditional}</h1>;
-  }
-
-  return (
-    <div className="quiz-prompt">
-      <h1>{word.traditional}</h1>
-      <span>{word.simplified}</span>
-    </div>
-  );
+  return <h1>{word.traditional}</h1>;
 }

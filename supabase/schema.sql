@@ -3,8 +3,8 @@ create table if not exists public.profiles (
   display_name text,
   source_language text not null default 'zh',
   target_language text not null default 'en',
-  chinese_display_mode text not null default 'both'
-    check (chinese_display_mode in ('simplified', 'traditional', 'both')),
+  chinese_display_mode text not null default 'traditional'
+    check (chinese_display_mode in ('simplified', 'traditional')),
   estimated_level text not null default 'beginner'
     check (estimated_level in ('beginner', 'intermediate', 'advanced')),
   placement_completed_at timestamptz,

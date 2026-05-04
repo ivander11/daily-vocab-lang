@@ -4,7 +4,7 @@
 
 Build a mobile-first progressive web app for Chinese to English vocabulary learning. The first version should feel like opening a lock-screen vocabulary widget: the user lands directly on one focused word card, gives a quick learning-status response, and immediately receives another word tailored to their level.
 
-The app will start with Chinese to English, while keeping the product and data model flexible enough to support additional language pairs later. Chinese display must support Simplified, Traditional, or both, based on user preference.
+The app will start with Chinese to English, while keeping the product and data model flexible enough to support additional language pairs later. Chinese display must support either Simplified or Traditional, based on user preference.
 
 ## Goals
 
@@ -30,8 +30,7 @@ Version 1 is a Supabase-backed PWA. Users sign in with a magic-link or email-cod
 
 Each vocabulary card shows:
 
-- Simplified Chinese translation.
-- Traditional Chinese translation.
+- Chinese word in the selected script.
 - Pinyin.
 - English meaning.
 - Short example sentence.
@@ -67,7 +66,6 @@ The settings screen lets users choose Chinese display mode:
 
 - Simplified.
 - Traditional.
-- Both.
 
 It also shows basic progress:
 
@@ -88,7 +86,7 @@ Stores user-level settings and personalization state.
 - `display_name`: optional user display name.
 - `source_language`: default `zh`.
 - `target_language`: default `en`.
-- `chinese_display_mode`: `simplified`, `traditional`, or `both`.
+- `chinese_display_mode`: `simplified` or `traditional`.
 - `estimated_level`: `beginner`, `intermediate`, or `advanced`.
 - `placement_completed_at`: timestamp.
 - `created_at`: timestamp.
@@ -179,7 +177,7 @@ Testing should focus on behavior with product risk:
 - Placement quiz maps scores to levels correctly.
 - Status-button actions update user progress correctly.
 - Auth routing sends new users to placement and returning users to the vocabulary card.
-- Display settings correctly show Simplified, Traditional, or both.
+- Display settings correctly show either Simplified or Traditional.
 
 ## Delivery
 

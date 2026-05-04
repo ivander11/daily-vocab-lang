@@ -70,12 +70,5 @@ function ChineseDisplay({
   mode: Profile['chineseDisplayMode'];
 }) {
   if (mode === 'simplified') return <p className="translation">{word.simplified}</p>;
-  if (mode === 'traditional') return <p className="translation">{word.traditional}</p>;
-
-  return (
-    <div className="dual-translation">
-      <span>{word.traditional}</span>
-      <span>{word.simplified}</span>
-    </div>
-  );
+  return <p className="translation">{word.traditional}</p>;
 }

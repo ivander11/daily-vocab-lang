@@ -1,4 +1,4 @@
-export type DisplayMode = 'simplified' | 'traditional' | 'both';
+export type DisplayMode = 'simplified' | 'traditional';
 export type Level = 'beginner' | 'intermediate' | 'advanced';
 export type WordStatus = 'new' | 'learning' | 'known';
 

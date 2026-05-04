@@ -211,7 +211,7 @@ Show the recommended word and status buttons. Save progress and load the next wo
 
 - [ ] **Step 4: Build settings/progress**
 
-Let the user choose Simplified, Traditional, or Both. Show progress counts and current level.
+Let the user choose Simplified or Traditional. Show progress counts and current level.
 
 ### Task 8: Documentation And Verification
 

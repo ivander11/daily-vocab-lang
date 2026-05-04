@@ -8,7 +8,6 @@ interface SettingsScreenProps {
 }
 
 const displayModes: Array<{ value: DisplayMode; label: string }> = [
-  { value: 'both', label: 'Both' },
   { value: 'traditional', label: 'Traditional' },
   { value: 'simplified', label: 'Simplified' }
 ];

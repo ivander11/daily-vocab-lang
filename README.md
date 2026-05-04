@@ -31,7 +31,7 @@ npm run dev
 ## Product Scope
 
 - Chinese to English first.
-- Simplified, Traditional, or Both display modes.
+- Simplified or Traditional display modes.
 - Placement quiz for starting level.
 - Quick status buttons: Know, Learning, New.
 - Recommendation logic that favors unseen and learning words near the user's level.

@@ -214,18 +214,12 @@ p {
   overflow-wrap: anywhere;
 }
 
-.translation,
-.dual-translation {
+.translation {
   margin-top: 18px;
   color: #f8fafc;
   font-size: 25px;
   font-weight: 800;
   line-height: 1.25;
-}
-
-.dual-translation {
-  display: grid;
-  gap: 5px;
 }
 
 .pinyin {
@@ -362,7 +356,7 @@ p {
 
 .segmented-control {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   margin-top: 14px;
 }
