@@ -246,6 +246,14 @@ p {
   line-height: 1.5;
 }
 
+.example mark {
+  padding: 1px 4px;
+  border-radius: 6px;
+  background: #fde68a;
+  color: #111827;
+  font-weight: 850;
+}
+
 .status-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

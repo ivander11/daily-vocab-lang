@@ -1,5 +1,6 @@
 import { Check, HelpCircle, RotateCcw } from 'lucide-react';
 import { useMemo } from 'react';
+import { splitHighlightedText } from '../lib/highlight';
 import { selectNextWord } from '../lib/recommendation';
 import type { Profile, UserWordProgress, VocabularyEntry, WordStatus } from '../types';
 
@@ -36,11 +37,7 @@ export function VocabularyCard({ vocabulary, progress, profile, onStatus }: Voca
         <p className="pinyin">{word.pinyin}</p>
         <h2 className="english-answer">{word.term}</h2>
         <div className="example">
-          <span>
-            {profile.chineseDisplayMode === 'simplified'
-              ? word.exampleZhSimplified
-              : word.exampleZhTraditional}
-          </span>
+          <HighlightedExample word={word} mode={profile.chineseDisplayMode} />
           <span>{word.exampleEn}</span>
         </div>
       </article>
@@ -59,6 +56,29 @@ export function VocabularyCard({ vocabulary, progress, profile, onStatus }: Voca
         </button>
       </div>
     </section>
+  );
+}
+
+function HighlightedExample({
+  word,
+  mode
+}: {
+  word: VocabularyEntry;
+  mode: Profile['chineseDisplayMode'];
+}) {
+  const phrase = mode === 'simplified' ? word.simplified : word.traditional;
+  const example = mode === 'simplified' ? word.exampleZhSimplified : word.exampleZhTraditional;
+
+  return (
+    <span>
+      {splitHighlightedText(example, phrase).map((segment, index) =>
+        segment.highlighted ? (
+          <mark key={`${segment.text}-${index}`}>{segment.text}</mark>
+        ) : (
+          <span key={`${segment.text}-${index}`}>{segment.text}</span>
+        )
+      )}
+    </span>
   );
 }
 
