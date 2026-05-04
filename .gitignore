@@ -8,3 +8,5 @@ build/
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+.idea/
+android/.idea/
