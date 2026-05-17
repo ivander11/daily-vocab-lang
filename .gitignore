@@ -1,5 +1,6 @@
 .superpowers/
 .superpowers/brainstorm/*/state/
+docs/superpowers/
 node_modules/
 dist/
 build/
